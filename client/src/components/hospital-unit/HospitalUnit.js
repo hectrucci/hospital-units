@@ -13,7 +13,7 @@ class HospitalUnit extends Component {
     }
 
     toggleActive(e) {
-        e.preventDefault();
+       e.preventDefault();
         this.setState({
             isActive: !this.state.isActive,
         });
@@ -62,25 +62,20 @@ class HospitalUnit extends Component {
                 <div className={`panel panel-${this.getUnitStatus()} frontface`}>
                     <div className="panel-heading">
                         {this.props.unit.name}
-                        <button type="button"
-                                className={`btn btn-${this.getUnitStatus()} btn-xs info-button`}
-                                onClick={this.toggleActive}>
-                            <span className="glyphicon glyphicon-info-sign"></span>
-                        </button>
                     </div>
                     <div className="panel-body">
                         <div className="capacity-percentage">Capacity: {this.getCapacity()}%</div>
                         {this.getStatusInfo()}
                     </div>
+                    <button type="button"
+                            className={`btn btn-${this.getUnitStatus()} btn-xs info-button`}
+                            onClick={this.toggleActive}>
+                        <span className="glyphicon glyphicon-info-sign"></span>
+                    </button>
                 </div>
                 <div className={`panel panel-${this.getUnitStatus()} backface`}>
                     <div className="panel-heading">
                         {this.props.unit.name}
-                        <button type="button"
-                                className={`btn btn-${this.getUnitStatus()} btn-xs info-button`}
-                                onClick={this.toggleActive}>
-                            <span className="glyphicon glyphicon glyphicon-arrow-left"></span>
-                        </button>
                     </div>
                     <div className="panel-body">
                         <div><strong>Capacity:</strong> {this.props.unit.capacity}</div>
@@ -90,6 +85,11 @@ class HospitalUnit extends Component {
                         {this.props.unit.lowAlarm ?
                             <div><strong>Low Alarm:</strong> {this.props.unit.lowAlarm}</div> : ""}
                     </div>
+                    <button type="button"
+                            className={`btn btn-${this.getUnitStatus()} btn-xs info-button`}
+                            onClick={this.toggleActive}>
+                        <span className="glyphicon glyphicon glyphicon-arrow-left"></span>
+                    </button>
                 </div>
             </div>
         )
