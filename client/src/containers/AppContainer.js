@@ -1,4 +1,4 @@
-import App from '../components/App/App';
+import App from '../components/app/App';
 import { saveUnits } from '../actions/unit_actions';
 import { connect } from 'react-redux';
 
