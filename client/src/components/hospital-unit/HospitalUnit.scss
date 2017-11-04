@@ -3,7 +3,7 @@
     height: 152px;
     margin-top: 5px;
     margin-right: 5px;
-    min-width: 152px;
+    min-width: 300px;
     position:relative;
     transform-style: preserve-3d;
     transition: transform 1s ease;
@@ -45,11 +45,6 @@
             position: absolute;
             right: 2px;
         }
-    }
-
-    .frontface {
-        background-color: #e2e2e2;
-        z-index: 2;
 
         &.panel-danger {
             animation-name: danger;
@@ -66,8 +61,20 @@
         }
     }
 
+    .frontface {
+        z-index: 2;
+    }
+
     .backface {
         transform: rotateY(180deg);
+    }
+
+    @media(min-width: 1200px) {
+        min-width: 270px;
+    }
+
+    @media(max-width: 991px) {
+        min-width: 350px;
     }
 
     @media(max-width: 768px) {
@@ -79,6 +86,7 @@
     from {
         background-color: #ff7575;
     }
+
     to {
         background-color: #f2dede;
     }
@@ -88,6 +96,7 @@
     from {
         background-color: #82d5ff;
     }
+
     to {
         background-color: #d9edf7;
     }

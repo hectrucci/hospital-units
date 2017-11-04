@@ -4,10 +4,6 @@
     }
 
     .units-container {
-        perspective: 1000px;
-
-        @media(max-width: 768px) {
-            perspective: 10000px;
-        }
+        perspective: 20000px;
     }
 }

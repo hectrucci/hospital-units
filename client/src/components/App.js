@@ -2,7 +2,7 @@ import { Component } from 'react';
 import { getHostpitalUnits } from '../services/HospitalIQService';
 import HospitalUnit from './hospital-unit/HospitalUnit';
 
-//styles
+// styles
 import './App.scss';
 
 class App extends Component {
@@ -28,25 +28,14 @@ class App extends Component {
             <div className="container app">
                 <h1 className="app-title">Hospital IQ</h1>
                 <div className="row">
-                    <section className="col-sm-9">
-                        <h3>Units</h3>
+                    <section className="col-sm-12">
+                        <h3>Hospital Units</h3>
                         <div className="panel-group units-container">
                             {this.state.units.map(unit =>
                                 <HospitalUnit key={unit.id} unit={unit}/>
                             )}
                         </div>
                     </section>
-                    <aside className="col-sm-3">
-                        <h3>Alarms</h3>
-                        <section className="row unit-high-alarms">
-                            <h4>High</h4>
-                            <div className="col-sm-12"></div>
-                        </section>
-                        <section className="row unit-low-alarms">
-                            <h4>Low</h4>
-                            <div className="col-sm-12"></div>
-                        </section>
-                    </aside>
                 </div>
             </div>
         )

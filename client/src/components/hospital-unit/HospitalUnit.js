@@ -63,12 +63,12 @@ class HospitalUnit extends Component {
                         </button>
                     </div>
                     <div className="panel-body">
-                        <div>Capacity: {this.props.unit.capacity}</div>
-                        <div>Census: {this.props.unit.census}</div>
+                        <div><strong>Capacity:</strong> {this.props.unit.capacity}</div>
+                        <div><strong>Census:</strong> {this.props.unit.census}</div>
                         {this.props.unit.highAlarm ?
-                            <div>High Alarm: {this.props.unit.highAlarm}</div> : ""}
+                            <div><strong>High Alarm:</strong> {this.props.unit.highAlarm}</div> : ""}
                         {this.props.unit.lowAlarm ?
-                            <div>Low Alarm: {this.props.unit.lowAlarm}</div> : ""}
+                            <div><strong>Low Alarm:</strong> {this.props.unit.lowAlarm}</div> : ""}
                     </div>
                 </div>
             </div>
