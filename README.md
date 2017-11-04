@@ -1,4 +1,4 @@
-# Hospital IQ
+# Hospital Units
 
 
 ## Usage
