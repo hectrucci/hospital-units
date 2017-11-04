@@ -1,13 +1,17 @@
+import { units } from './reducers/units';
+
 import {
     createStore,
     combineReducers,
 } from 'redux';
 
-const initialState = {};
+const initialState = {
+    units: [],
+};
 
 let store = createStore(
     combineReducers({
-        test: f => 1,
+        units,
     }),
     initialState,
 );

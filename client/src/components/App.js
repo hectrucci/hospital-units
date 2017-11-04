@@ -8,19 +8,25 @@ import './App.scss';
 class App extends Component {
     constructor(props) {
         super(props);
-        this.state = {
-            units: [],
-        };
     }
 
     componentDidMount() {
         getHostpitalUnits()
             .then(units => {
-                this.setState({
-                    units,
-                });
+                this.props.saveUnits(units);
+                this.startFetching();
             })
             .catch(error => console.log(error));
+    }
+
+    startFetching() {
+        setInterval(() => {
+            getHostpitalUnits()
+                .then(units => {
+                    this.props.saveUnits(units);
+                })
+                .catch(error => console.log(error));
+        }, 5000);
     }
 
     render() {
@@ -30,7 +36,7 @@ class App extends Component {
                 <div className="row">
                     <section className="col-sm-12">
                         <div className="panel-group units-container">
-                            {this.state.units.map(unit =>
+                            {this.props.units.map(unit =>
                                 <HospitalUnit key={unit.id} unit={unit}/>
                             )}
                         </div>
