@@ -1,6 +1,6 @@
 import { Component } from 'react';
-import { getHostpitalUnits } from '../services/HospitalIQService';
-import HospitalUnit from './hospital-unit/HospitalUnit';
+import { getHostpitalUnits } from '../../services/HospitalIQService';
+import HospitalUnit from '../hospital-unit/HospitalUnit';
 
 // styles
 import './App.scss';
