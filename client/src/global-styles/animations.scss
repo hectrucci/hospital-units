@@ -1,0 +1,30 @@
+@keyframes danger {
+    from {
+        background-color: #ff7575;
+    }
+
+    to {
+        background-color: #f2dede;
+    }
+}
+
+@keyframes info {
+    from {
+        background-color: #82d5ff;
+    }
+
+    to {
+        background-color: #d9edf7;
+    }
+}
+
+@keyframes bounce {
+    0%,
+    100% {
+        transform: scale(0.0);
+    }
+
+    50% {
+        transform: scale(1.0);
+    }
+}

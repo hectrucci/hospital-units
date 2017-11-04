@@ -1,0 +1,29 @@
+@import '../../global-styles/animations.scss';
+
+.spinner {
+    height: 40px;
+    left: 50%;
+    margin-left: -20px;
+    margin-top: -20px;
+    position: fixed;
+    top: 50%;
+    width: 40px;
+    z-index: 1000;
+}
+
+.double-bounce1,
+.double-bounce2 {
+    animation: bounce 2.0s infinite ease-in-out;
+    background-color: #337ab7;
+    border-radius: 50%;
+    height: 100%;
+    left: 0;
+    opacity: 0.6;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+.double-bounce2 {
+    animation-delay: -1.0s;
+}

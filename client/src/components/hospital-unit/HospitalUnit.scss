@@ -1,3 +1,6 @@
+@import '../../global-styles/variables.scss';
+@import '../../global-styles/animations.scss';
+
 .hospital-unit {
     display: inline-block;
     height: 152px;
@@ -78,35 +81,15 @@
         transform: rotateY(180deg);
     }
 
-    @media(min-width: 1200px) {
+    @media(min-width: $lg-screen) {
         min-width: 270px;
     }
 
-    @media(max-width: 991px) {
+    @media(max-width: $md-screen) {
         min-width: 350px;
     }
 
-    @media(max-width: 768px) {
+    @media(max-width: $sm-screen) {
         width: 100%;
-    }
-}
-
-@keyframes danger {
-    from {
-        background-color: #ff7575;
-    }
-
-    to {
-        background-color: #f2dede;
-    }
-}
-
-@keyframes info {
-    from {
-        background-color: #82d5ff;
-    }
-
-    to {
-        background-color: #d9edf7;
     }
 }

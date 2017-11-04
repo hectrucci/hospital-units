@@ -1,4 +1,4 @@
-const units = (state= {}, action) => {
+const units = (state = {}, action = {}) => {
     switch (action.type) {
         case 'SAVE_UNITS':
             const units = action.units;
@@ -7,6 +7,5 @@ const units = (state= {}, action) => {
             return state;
     }
 };
-
 
 export { units };

@@ -1,6 +1,25 @@
+@import '../../global-styles/variables.scss';
+
 .app {
     .app-title {
         text-align: center;
+    }
+
+    .unit-sorting-container {
+        margin-top: 20px;
+        margin-bottom: 20px;
+
+        @media(max-width: $sm-screen) {
+            text-align: center;
+        }
+    }
+
+    .unit-sorting-select {
+        margin-left: 10px;
+
+        @media(max-width: $sm-screen) {
+            margin-left: 0;
+        }
     }
 
     .units-container {
