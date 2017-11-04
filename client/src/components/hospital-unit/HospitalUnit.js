@@ -12,7 +12,8 @@ class HospitalUnit extends Component {
         };
     }
 
-    toggleActive() {
+    toggleActive(e) {
+        e.preventDefault();
         this.setState({
             isActive: !this.state.isActive,
         });
