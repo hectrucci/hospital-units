@@ -26,10 +26,9 @@ class App extends Component {
     render() {
         return (
             <div className="container app">
-                <h1 className="app-title">Hospital IQ</h1>
+                <h1 className="app-title">Hospital Units</h1>
                 <div className="row">
                     <section className="col-sm-12">
-                        <h3>Hospital Units</h3>
                         <div className="panel-group units-container">
                             {this.state.units.map(unit =>
                                 <HospitalUnit key={unit.id} unit={unit}/>

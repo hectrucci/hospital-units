@@ -37,6 +37,24 @@ class HospitalUnit extends Component {
         return Math.round((unit.census * 100) / unit.capacity);
     }
 
+    getStatusInfo() {
+        let status;
+
+        switch (this.getUnitStatus()) {
+            case 'danger':
+                status = 'Too High';
+                break;
+            case 'info':
+                status = 'Too Low';
+                break;
+            case 'primary':
+            default:
+                status = 'Normal';
+        }
+
+        return <div className="status-info">{`Status: ${status}`}</div>;
+    }
+
     render() {
         return (
             <div className={`hospital-unit ${this.state.isActive ? 'flip' : ''}`}>
@@ -51,6 +69,7 @@ class HospitalUnit extends Component {
                     </div>
                     <div className="panel-body">
                         <div className="capacity-percentage">Capacity: {this.getCapacity()}%</div>
+                        {this.getStatusInfo()}
                     </div>
                 </div>
                 <div className={`panel panel-${this.getUnitStatus()} backface`}>
