@@ -2,12 +2,12 @@ const express = require('express');
 const path = require('path');
 const app = express();
 const isNotProductionEnv = process.env.NODE_ENV !== 'production';
-const hospitalIQService = require('./services/hospitalIQ_service');
+const hospitalUnitService = require('./services/hospital_unit_service');
 
 app.use(express.static(path.join(__dirname, '../client/build')));
 
 app.get('/api/units/', (req, res) => {
-    hospitalIQService.getHostpitalUnits()
+    hospitalUnitService.getHostpitalUnits()
         .then((hospitalUnits) => {
              res.json(hospitalUnits);
         })
