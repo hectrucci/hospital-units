@@ -53,8 +53,8 @@ module.exports = options => {
                             {
                                 loader: 'postcss-loader',
                                 options: {
-                                    plugins: function () {
-                                        return [
+                                    plugins: () =>
+                                        [
                                             autoprefixer({
                                                 browsers: ['Chrome >= 35',
                                                     'Firefox >= 38',
@@ -67,10 +67,9 @@ module.exports = options => {
                                                     'Opera >= 12'],
                                                 cascade: true,
                                                 add: true,
-                                                remove: true
+                                                remove: true,
                                             }),
-                                        ];
-                                    },
+                                        ]
                                 },
                             },
                             'sass-loader',
