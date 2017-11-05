@@ -27,6 +27,14 @@ class App extends Component {
             .catch(error => console.log(error));
     }
 
+    componentWillUnmount() {
+        const fetchUnits = this.fetchUnits;
+
+        if (fetchUnits) {
+            clearInterval(fetchUnits);
+        }
+    }
+
     sortAndSaveUnits(units) {
         const { _sortingSelect } = this.refs
         const sortedUnits = sortHospitalUnits(_sortingSelect.value, units);
@@ -34,7 +42,7 @@ class App extends Component {
     }
 
     startFetching() {
-        setInterval(() => {
+        this.fetchUnits = setInterval(() => {
             getHostpitalUnits()
                 .then(units => {
                     this.sortAndSaveUnits(units);
