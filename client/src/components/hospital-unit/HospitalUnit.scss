@@ -40,7 +40,6 @@
 
     .frontface,
     .backface {
-        -webkit-backface-visibility: hidden;
         backface-visibility: hidden;
         height: 100%;
         position: absolute;

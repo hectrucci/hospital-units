@@ -1,6 +1,7 @@
 const webpack = require('webpack');
 const CleanPlugin = require('clean-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const autoprefixer = require ('autoprefixer');
 const extractStyles = new ExtractTextPlugin({filename: 'app.css', allChunks: true});
 
 module.exports = options => {
@@ -49,6 +50,29 @@ module.exports = options => {
                         fallback: 'style-loader',
                         use: [
                             'css-loader',
+                            {
+                                loader: 'postcss-loader',
+                                options: {
+                                    plugins: function () {
+                                        return [
+                                            autoprefixer({
+                                                browsers: ['Chrome >= 35',
+                                                    'Firefox >= 38',
+                                                    'Edge >= 12',
+                                                    'Explorer >= 10',
+                                                    'iOS >= 8',
+                                                    'Safari >= 8',
+                                                    'Android 2.3',
+                                                    'Android >= 4',
+                                                    'Opera >= 12'],
+                                                cascade: true,
+                                                add: true,
+                                                remove: true
+                                            }),
+                                        ];
+                                    },
+                                },
+                            },
                             'sass-loader',
                         ],
                     }),
