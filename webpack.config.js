@@ -129,7 +129,7 @@ module.exports = options => {
 
         config.plugins.push(cleanDist);
         config.plugins.push(new webpack.optimize.UglifyJsPlugin({
-            sourceMap: true,
+            sourceMap: false,
             warnings: false,
             mangle: true,
         }));
