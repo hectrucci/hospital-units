@@ -10,23 +10,7 @@ const _getAlarmValue = (unit) => {
     }
 
     return 1;
-}
-
-const _sortBy = (sortBy, units) => {
-    if (sortBy === 'name') {
-         return [...units].sort(_compareUnitNames);
-    }
-
-    return [...units].sort((a, b) => {
-        const diff = a[sortBy] - b[sortBy];
-
-        if (diff === 0) {
-            return _compareUnitNames(a, b);
-        }
-
-        return diff;
-    });
-}
+};
 
 const _compareUnitNames = (a, b) => {
     if (a.name < b.name) {
@@ -38,7 +22,38 @@ const _compareUnitNames = (a, b) => {
     }
 
     return 0;
-}
+};
+
+const _compareByCensusPercentage = (a, b) => {
+    const aPercengate = Math.round((a.census * 100) / a.capacity);
+    const bPercengate = Math.round((b.census * 100) / b.capacity);
+
+    if (aPercengate === bPercengate) {
+        return _compareUnitNames(a, b);
+    }
+
+    return aPercengate - bPercengate;
+};
+
+const _sortBy = (sortBy, units) => {
+    if (sortBy === 'name') {
+         return [...units].sort(_compareUnitNames);
+    }
+
+    if (sortBy === 'census_percentage') {
+        return [...units].sort(_compareByCensusPercentage);
+    }
+
+    return [...units].sort((a, b) => {
+        const diff = a[sortBy] - b[sortBy];
+
+        if (diff === 0) {
+            return _compareUnitNames(a, b);
+        }
+
+        return diff;
+    });
+};
 
 const _alarmsFirstSorting = (units) => {
     return [...units].sort((a, b) => {
@@ -83,6 +98,8 @@ const sortHospitalUnits = (sortBy, units) => {
             return _sortBy('capacity', units);
         case 'CENSUS':
             return _sortBy('census', units);
+        case 'CENSUS_PERCENTAGE':
+            return _sortBy('census_percentage', units);
         case 'HIGH_ALARM':
             return _sortBy('highAlarm', units);
         case 'LOW_ALARM':

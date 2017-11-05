@@ -66,7 +66,8 @@ class App extends Component {
                                     <option value="NORMAL_FIRST">Normal First</option>
                                     <option value="NAME">Name</option>
                                     <option value="CAPACITY">Capacity</option>
-                                    <option value="CENSUS">Census</option>
+                                    <option value="CENSUS">Census (#)</option>
+                                    <option value="CENSUS_PERCENTAGE">Census (%)</option>
                                     <option value="HIGH_ALARM">High Alarm</option>
                                     <option value="LOW_ALARM">Low Alarm</option>
                                 </select>
