@@ -1,4 +1,4 @@
-import { units } from '../../src/store/reducers/units';
+import { units } from '../../src/store/reducers/units_reducer';
 
 describe('Testing Unit Reducer', () => {
     it('Should set units to the state', () => {

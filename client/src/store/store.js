@@ -1,4 +1,4 @@
-import { units } from './reducers/units';
+import { units } from './reducers/units_reducer';
 
 import {
     createStore,
